@@ -1,13 +1,22 @@
-import './App.css'
-import Movie from './components/Movie'
+import './css/App.css'
+import Favorite from './pages/Favorites'
+import Home from './pages/Home'
+import {Routes, Route} from 'react-router-dom'
+import { MovieProvider } from './contexts/MovieContext'
+import Navbar from './components/Navbar'
+
 
 function App() {
   return (
-    <>
-      <Movie movie={{title: "Robin Rises", year: 2004}}/>
-      <Movie movie={{title: "Robin Rises", year: 2004}}/>
-      <Movie movie={{title: "Robin Rises", year: 2004}}/>
-    </>
+    <MovieProvider>
+      <Navbar />
+      <main className='main-content'>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/Favorite' element={<Favorite />} />
+        </Routes>
+      </main>
+    </MovieProvider>
   )
 }
 
