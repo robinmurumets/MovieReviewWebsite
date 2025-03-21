@@ -15,7 +15,7 @@ function Movie({ movie, isFlipped, onCardClick }) {
       addFavorite(movie);
     }
   }
-
+  
   return (
     <div className={`movie-card ${isFlipped ? "flipped" : ""}`} onClick={onCardClick}>
       <div className="movie-card-inner">
